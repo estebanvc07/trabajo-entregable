@@ -1,0 +1,30 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+
+# IDEs
+.idea/
+*.iml
+*.class
+*.jar
+*.log
+*.war
+*.ear
+*.swp
+*.bak
+out/
+build/
+
+# NetBeans
+nbproject/private/
+dist/
+nbbuild/
+nbdist/
+
+# VS Code
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
