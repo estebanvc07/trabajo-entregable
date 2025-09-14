@@ -1,0 +1,128 @@
+/* Animación para el fondo */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Estilos base */
+body.bg-light {
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.95), rgba(52, 152, 219, 0.082)), 
+                url('https://mymodernmet.com/wp/wp-content/uploads/2019/06/Astana-Kazakhstan-Fundamental-Architects-4.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: backgroundAnimation 20s ease infinite;
+}
+
+/* Efecto de superposición */
+body.bg-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+/* Ajuste del contenedor para que esté por encima del overlay */
+.container.mt-5 {
+    position: relative;
+    z-index: 1;
+    margin-top: 0 !important;
+}
+
+/* Mejora del efecto glassmorphism en la tarjeta */
+.card {
+    background: rgba(246, 246, 250, 0.227);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    padding: 2.5rem;
+}
+
+/* Estilos del encabezado */
+.text-center.mb-4 {
+    margin-bottom: 2rem;
+}
+
+.bi-tools.fs-1 {
+    font-size: 3rem !important;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    color: #b3b1b1; /* Cambiado de #9aa8b7 a blanco */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos del formulario */
+.form-label {
+    color: #b3b1b1; /* Cambiado de #aab1b8 a blanco */
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #32aecd;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(217, 220, 223, 0.25);
+}
+
+/* Estilos del botón */
+.btn-primary {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border: none;
+    padding: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2980b9, #15599c);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+/* Estilos de mensajes de error */
+.alert-danger {
+    background-color: rgba(231, 76, 60, 0.1);
+    border: none;
+    border-left: 4px solid #e74c3c;
+    color: #c0392b;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.text-muted {
+    color: #b3b1b1 !important; /* Color blanco para "Ingrese sus credenciales" */
+    opacity: 0.9;
+}
